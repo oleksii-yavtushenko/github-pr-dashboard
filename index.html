@@ -1028,6 +1028,7 @@ function renderPRCard(pr, isHidden) {
         </div>
       </div>
       <div class="pr-meta">
+        ${pr.user ? `<a href="https://github.com/${pr.user.login}" target="_blank" onclick="event.stopPropagation()" style="display:inline-flex;align-items:center;gap:4px"><img class="reviewer-avatar" src="${pr.user.avatar_url}&s=40" alt="${pr.user.login}" title="${pr.user.login}" style="margin-left:0"> ${escapeHtml(pr.user.login)}</a>` : ''}
         <a href="https://github.com/${repo}" target="_blank" onclick="event.stopPropagation()">${repo}</a>
         <span>#${pr.number}</span>
         ${isDraft ? '<span style="color:var(--text-muted)">Draft</span>' : ''}
