@@ -690,7 +690,7 @@ function toggleTheme() {
 
 function updateFavicon() {
   const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-  const variant = isDark ? 'dark' : 'light';
+  const variant = isDark ? 'light' : 'dark';
   const svgEl = document.getElementById('favicon-svg');
   const pngEl = document.getElementById('favicon-png');
   if (svgEl) svgEl.href = `https://github.githubassets.com/favicons/favicon-${variant}.svg`;
