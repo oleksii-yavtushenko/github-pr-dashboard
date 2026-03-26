@@ -964,9 +964,10 @@ function renderContent(authored, reviews, mentioned) {
 
   const content = document.getElementById('content');
   let html = '';
-  html += renderSection('Created by you', visibleAuthored, 'green', false);
-  html += renderSection('Review requested', visibleReviews, 'purple', false);
-  html += renderSection('Mentioned', visibleMentioned, 'orange', false);
+  if (visibleAuthored.length > 0) html += renderSection('Created by you', visibleAuthored, 'green', false);
+  if (visibleReviews.length > 0) html += renderSection('Review requested', visibleReviews, 'purple', false);
+  if (visibleMentioned.length > 0) html += renderSection('Mentioned', visibleMentioned, 'orange', false);
+  if (!html) html = '<div class="empty-state"><div>No open pull requests</div></div>';
   content.innerHTML = html;
 
   // Collect all hidden PRs from current data
